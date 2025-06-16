@@ -1,11 +1,10 @@
 <!-- =========================================
-  File: index.html (main page)
-  Note: CSS has been extracted to an external file
-        located at assets/css/style.css for clarity.
-        The full stylesheet is included *below* as a
-        comment block so you can copy‑paste it into
-        that path. Feel free to tweak variables or
-        add new selectors there.
+  File: index.html
+  Note: Stylesheet has been heavily enhanced for a
+        richer visual experience (gradient animation,
+        glassmorphism cards, dark‑mode support, etc.).
+        Copy the CSS in the comment block to
+        assets/css/style.css.
 ========================================= -->
 <!DOCTYPE html>
 <html lang="ja">
@@ -13,11 +12,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>佐々木翔矢 | Quantum × CAE</title>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
-
-  <!-- Main Stylesheet (copy the CSS in the comment block below to this path) -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="/stylesheet.css" />
 </head>
 <body>
   <header>
@@ -33,50 +29,45 @@
   </header>
 
   <main>
-    <!-- About -->
     <section id="about">
       <h2>About</h2>
       <p>TBD — 簡単な自己紹介、研究バックグラウンド、現在の所属などをここに記載してください。</p>
     </section>
 
-    <!-- Research -->
     <section id="research">
       <h2>Research</h2>
       <div class="grid-two">
-        <div class="card">
+        <div class="card fade">
           <div class="card-title">Schrödingerization for Nonlinear PDEs</div>
           <div class="card-desc">TBD — 研究テーマの概要や目的を記述します。</div>
         </div>
-        <div class="card">
+        <div class="card fade" style="animation-delay:.15s">
           <div class="card-title">Quantum Algorithms for CAE</div>
           <div class="card-desc">TBD — 量子アルゴリズムのCAE応用に関する説明を記載します。</div>
         </div>
       </div>
     </section>
 
-    <!-- Publications -->
     <section id="publications">
       <h2>Publications</h2>
-      <div class="card">
+      <div class="card fade" style="animation-delay:.3s">
         <div class="card-title">非線形反応拡散方程式におけるSchr&ouml;dingerizationを用いた量子シミュレーションに関する研究</div>
         <div class="card-meta">佐々木翔矢*, 遠藤克浩, 村松眞由 — 第30回計算工学会, C-08-04 (6 pages), 2025</div>
         <div class="card-desc">提案手法の概要や結果について短く記述。要旨本文やスライドへのリンクも追加可能。</div>
       </div>
-      <div class="card">
+      <div class="card fade" style="animation-delay:.45s">
         <div class="card-title">TBD</div>
         <div class="card-meta">TBD</div>
         <div class="card-desc">今後の論文追加のためのプレースホルダです。</div>
       </div>
     </section>
 
-    <!-- CV -->
     <section id="cv">
       <h2>CV</h2>
       <p>最新のCVは <a href="assets/files/cv.pdf" target="_blank">こちら (PDF)</a> からダウンロードできます。</p>
       <p>TBD — 主要な学歴・職歴・受賞歴などを追記。</p>
     </section>
 
-    <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:shoya.sasaki@example.com">shoya.sasaki@example.com</a></p>

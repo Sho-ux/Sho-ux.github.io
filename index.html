@@ -2,10 +2,17 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>佐々木翔矢 | 研究ポートフォリオ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>佐々木翔矢 | Quantum × CAE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #f5f7fa;
+      --fg: #222;
+      --accent: #3b82f6;
+      --accent2: #6366f1;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,96 +21,219 @@
     }
 
     body {
-      background-color: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
     }
 
+    /* ---------------- Header ---------------- */
     header {
-      background: #2c3e50;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       color: #fff;
-      padding: 2rem 1rem;
+      padding: 4rem 1rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
     header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      margin-top: 0.75rem;
+      opacity: 0.9;
     }
 
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
+    /* ---------------- Navigation ---------------- */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
       background: #fff;
+      transition: 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------------- Main Layout ---------------- */
+    main {
+      max-width: 900px;
+      margin: -3rem auto 4rem;
+      background: #fff;
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    section h2::before {
+      content: '';
+      width: 35px;
+      height: 4px;
+      background: var(--accent);
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      border-radius: 2px;
+    }
+
+    /* ---------------- Card ---------------- */
+    .card {
+      background: #f9fafb;
+      padding: 1.5rem;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
     }
 
-    h2 {
-      margin-bottom: 1rem;
-      border-left: 5px solid #3498db;
-      padding-left: 0.75rem;
+    .card:not(:last-child) {
+      margin-bottom: 1.25rem;
     }
 
-    .pub {
-      margin-bottom: 1.5rem;
+    .card:hover {
+      transform: translateY(-4px);
     }
 
-    .pub-title {
+    .card-title {
       font-weight: 600;
-      color: #2c3e50;
+      font-size: 1.1rem;
+      color: var(--accent2);
     }
 
-    .pub-authors, .pub-info {
-      font-size: 0.95rem;
+    .card-meta {
+      font-size: 0.9rem;
       color: #555;
+      margin: 0.4rem 0 0.8rem;
     }
 
+    .card-desc {
+      font-size: 0.95rem;
+    }
+
+    /* ---------------- Grid ---------------- */
+    .grid-two {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* ---------------- Footer ---------------- */
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #999;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>佐々木翔矢</h1>
-    <p>博士後期課程 / 量子コンピューティング × CAE</p>
+    <p>博士後期課程 | 量子コンピューティング × CAE</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <section>
-      <h2>研究業績</h2>
-      <div class="pub">
-        <div class="pub-title">非線形反応拡散方程式におけるSchr&ouml;dingerizationを用いた量子シミュレーションに関する研究</div>
-        <div class="pub-authors">佐々木翔矢*, 遠藤克浩, 村松眞由</div>
-        <div class="pub-info">第30回計算工学会, C-08-04 (6 pages), 2025年</div>
+    <!-- About -->
+    <section id="about">
+      <h2>About</h2>
+      <p>TBD — 簡単な自己紹介、研究バックグラウンド、現在の所属などをここに記載してください。</p>
+    </section>
+
+    <!-- Research -->
+    <section id="research">
+      <h2>Research</h2>
+      <div class="grid-two">
+        <div class="card">
+          <div class="card-title">Schrödingerization for Nonlinear PDEs</div>
+          <div class="card-desc">TBD — 研究テーマの概要や目的を記述します。</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Quantum Algorithms for CAE</div>
+          <div class="card-desc">TBD — 量子アルゴリズムのCAE応用に関する説明を記載します。</div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>研究概要</h2>
-      <p>
-        私は量子計算技術を活用して、CAEにおける非線形偏微分方程式の高速・高精度な解法に取り組んでいます。特に、拡散・反応などの散逸系に対し、量子シミュレーションを適用することで、従来手法の限界を打破することを目指しています。
-      </p>
+    <!-- Publications -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="card">
+        <div class="card-title">非線形反応拡散方程式におけるSchr&ouml;dingerizationを用いた量子シミュレーションに関する研究</div>
+        <div class="card-meta">佐々木翔矢*, 遠藤克浩, 村松眞由 — 第30回計算工学会, C-08-04 (6 pages), 2025</div>
+        <div class="card-desc">提案手法の概要や結果について短く記述。要旨本文やスライドへのリンクも追加可能。</div>
+      </div>
+      <div class="card">
+        <div class="card-title">TBD</div>
+        <div class="card-meta">TBD</div>
+        <div class="card-desc">今後の論文追加のためのプレースホルダです。</div>
+      </div>
     </section>
 
-    <section>
-      <h2>連絡先</h2>
-      <p>Email: shoya.sasaki@example.com</p>
+    <!-- CV -->
+    <section id="cv">
+      <h2>CV</h2>
+      <p>最新のCVは <a href="assets/files/cv.pdf" target="_blank">こちら (PDF)</a> からダウンロードできます。</p>
+      <p>TBD — 主要な学歴・職歴・受賞歴などを追記。</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:shoya.sasaki@example.com">shoya.sasaki@example.com</a></p>
       <p>GitHub: <a href="https://github.com/sasaki-shoya" target="_blank">github.com/sasaki-shoya</a></p>
+      <p>LinkedIn: TBD</p>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 佐々木翔矢
+    &copy; 2025 Shoya Sasaki — Last updated: TBD
   </footer>
 </body>
 </html>
